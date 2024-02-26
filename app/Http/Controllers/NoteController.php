@@ -6,10 +6,38 @@ use App\Models\Note;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class NoteController extends Controller
 {
+
+    public function index(){
+
+            $notes = null;
+
+            if (Auth::user()->role == 1) {
+                $notes = \App\Models\Note::all()
+                    ->sortBy([
+                        ['favorite', 'desc'],
+                        ['title', 'asc']
+                    ]);
+            }
+            else {
+                $notes = Auth::user()->notes
+                    ->sortBy([
+                        ['favorite', 'desc'],
+                        ['title', 'asc']
+                    ]);
+            }
+
+
+
+            return view('notes.index', [
+                'notes' => $notes
+            ]);
+        }
+
     public function destroy(Note $note) {
 
         if (!Gate::allows('isManager') && !Gate::allows('change-note', $note)) {

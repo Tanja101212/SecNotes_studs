@@ -19,6 +19,12 @@
                     <x-nav-link :href="route('notes.index')" :active="request()->routeIs('notes.index') || request()->routeIs('notes.edit') || request()->routeIs('notes.show')">
                         {{ __('Notes') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('tokens.index')" :active="request()->routeIs('tokens.index') || request()->routeIs('notes.edit') || request()->routeIs('notes.show')">
+                        {{ __('Notes') }}
+                    </x-nav-link>
+
+
                 </div>
             </div>
 
@@ -77,6 +83,10 @@
 
             <x-responsive-nav-link :href="route('notes.index')" :active="request()->routeIs('notes.index') || request()->routeIs('notes.edit') || request()->routeIs('notes.show')">
                 {{ __('Notes') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('tokens.index')" :active="request()->routeIs('tokens.index') || request()->routeIs('notes.edit') || request()->routeIs('notes.show')">
+                {{ __('Tokens') }}
             </x-responsive-nav-link>
         </div>
 
