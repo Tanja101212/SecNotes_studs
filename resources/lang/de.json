@@ -1,5 +1,8 @@
 {
     "You're logged in!": "Sie sind angemeldet!",
     "Remove note": "Notiz löschen",
-    "Tokens": "Token"
+    "Tokens": "Token",
+
+    "Your token is: :token": "Ihr Token lautet: :token"
 }
+

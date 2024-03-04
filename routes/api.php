@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// 5|2pQv7ZYZFKJygZhxkUriJ0lByorgrjZ1WNEeumgr936859d5
+
+
+
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get('/user', function (Request $request){
+        return $request->user();
+    });
+
+    Route::get('notes', [\App\Http\Controllers\RestController::class, 'index'])
+        ->middleware(['abilities:note:list']);
 });

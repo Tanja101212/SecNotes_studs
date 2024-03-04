@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ProfileController;
+use http\Client\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -74,3 +75,7 @@ Route::post('/users', [NoteController::class, 'createUser'])
 // Tokens
 Route::get('/tokens',[\App\Http\Controllers\TokenController::class,'index'])->name('tokens');
 require __DIR__.'/auth.php';
+
+Route::post('/tokens', [\App\Http\Controllers\TokenController::class, 'store']);
+
+
