@@ -15,21 +15,20 @@
                         @csrf
 
                         <div>
-                            <h1>{{__('Add a token')}}</h1>
+                            <h1>{{__('Add a token') }}</h1>
                         </div>
 
                         @if (session()->has('success'))
 
                             <div>
                                 <p class="font-semibold text-emerald-300">
-                                    {{session('success')}}
+                                    {{ session('success') }}
                                 </p>
                                 <p class="text-2xl font-semibold">
                                     {{ __('Your token is: :token', ['token'=>session('token')])}}
                                 </p>
                             </div>
-                        @endif>
-
+                        @endif
 
                         <div class="mt-4">
                             @error('title')
