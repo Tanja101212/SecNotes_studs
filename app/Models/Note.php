@@ -20,4 +20,11 @@ class Note extends Model
         return $this->belongsTo(User::class);
     }
 
+    // collection filter
+
+    public function scopeOwn($query){
+       return $query->where('user_id', auth()->id());
+    }
+
+
 }

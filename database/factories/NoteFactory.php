@@ -21,7 +21,7 @@ class NoteFactory extends Factory
             'title' => fake()->realTextBetween(5, 15),
             'content' => fake()->unique()->realText,
             'favorite' => fake()->boolean,
-            'user_id' => 1
+            'user_id' => 2
 
         ];
     }
